@@ -120,9 +120,10 @@ let lastname = "Doe";
 
 // Exercice 2.5 : Faites l'inversion du prénom et nom avec la décomposition
 // plutôt qu'avoir une variable temporaire
-let temp = firstname;
-firstname = lastname;
-lastname = temp;
+// let temp = firstname;
+// firstname = lastname;
+// lastname = temp;
+[firstname, lastname] = [lastname, firstname];
 
 console.log("Exercice 2.5");
 console.log(firstname, lastname);
