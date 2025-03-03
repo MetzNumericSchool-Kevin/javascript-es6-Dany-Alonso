@@ -5,15 +5,16 @@
 
 // Exercice 1.1 : Transforme la concaténation en interpolation de chaîne de caractères avec les backticks `
 function afficheAddresse(address) {
-  return (
-    "Votre adresse est : " +
-    address.street +
-    ", " +
-    address.city +
-    ", " +
-    address.country +
-    "."
-  );
+  // return (
+  //   "Votre adresse est : " +
+  //   address.street +
+  //   ", " +
+  //   address.city +
+  //   ", " +
+  //   address.country +
+  //   "."
+  // );
+  return `Votre adresse est : "${address.street}, ${address.city}, ${address.country}"`;
 }
 
 console.log("Exercice 1.1");
@@ -28,7 +29,11 @@ console.log(
 // Exercice 1.2 : Utilise les chaînes multilignes avec les backticks ` pour afficher plus simplement le menu
 console.log("Exercice 1.2");
 console.log(
-  "Menu de la semaine :\n    - Pâte à tartine\n    - Hoagie\n    - Salade de pommes"
+  // "Menu de la semaine :\n    - Pâte à tartine\n    - Hoagie\n    - Salade de pommes"
+  `Menu de la semaine :
+  - Pâte à tartine
+  - Hoagie
+  - Salade de pommes`
 );
 
 /**
@@ -45,12 +50,13 @@ const blue = colors[2];
 const yellow = colors[3];
 
 console.log("Exercice 2.1");
-console.log(red, green, blue, yellow);
+// console.log(red, green, blue, yellow);
+console.log(...colors);
 
 // Exercice 2.2 : La même chose, mais en ignorant ici "Red" et "Yellow"
-const green2 = colors[1];
-const blue2 = colors[2];
-
+// const green2 = colors[1];
+// const blue2 = colors[2];
+const [, green2, blue2, ,] = ["Red", "Green", "Blue", "Yellow"];
 console.log("Exercice 2.2");
 console.log(green2, blue2);
 
@@ -79,21 +85,28 @@ const roman = {
 };
 
 // Exercices 2.3 : Décompose l'objet pour récupérer le titre, l'éditeur et le tome dans des constantes
-const title = roman.title;
-const editor = roman.editor;
-const tome = roman.tome;
-
+// const title = roman.title;
+// const editor = roman.editor;
+// const tome = roman.tome;
+const { title, editor, tome } = roman;
 console.log("Exercice 2.3");
 console.log(title, editor, tome);
 
 // Exercice 2.4 : Décompose l'objet pour récupérer le nom du personnage principal,
 // le nom du premier personnage secondaire
 // et la voix Japonaise dans l'anime du second personnage secondaire
-const mainCharacterName = roman.mainCharacter.name;
-const secondCharacterName = roman.characters[0].name;
-const thirdCharacterJapaneseVoice = roman.characters[1].animeJapaneseVoice;
-
+// const mainCharacterName = roman.mainCharacter.name;
+// const secondCharacterName = roman.characters[0].name;
+// const thirdCharacterJapaneseVoice = roman.characters[1].animeJapaneseVoice;
+const {
+  mainCharacter: { name: mainCharacterName },
+  characters: [
+    { name: secondCharacterName },
+    { animeJapaneseVoice: thirdCharacterJapaneseVoice },
+  ],
+} = roman;
 console.log("Exercice 2.4");
+
 console.log(
   mainCharacterName,
   secondCharacterName,
