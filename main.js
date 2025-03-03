@@ -44,21 +44,21 @@ console.log(
 const colors = ["Red", "Green", "Blue", "Yellow"];
 
 // Exercice 2.1 : Utilise la décomposition pour créer les constantes de couleurs plutôt que d'accéder aux indices
-const red = colors[0];
-const green = colors[1];
-const blue = colors[2];
-const yellow = colors[3];
+// const red = colors[0];
+// const green = colors[1];
+// const blue = colors[2];
+// const yellow = colors[3];
 
-console.log("Exercice 2.1");
-// console.log(red, green, blue, yellow);
-console.log(...colors);
+// console.log("Exercice 2.1");
+// // console.log(red, green, blue, yellow);
+// console.log(...colors);
 
-// Exercice 2.2 : La même chose, mais en ignorant ici "Red" et "Yellow"
-// const green2 = colors[1];
-// const blue2 = colors[2];
-const [, green2, blue2, ,] = ["Red", "Green", "Blue", "Yellow"];
-console.log("Exercice 2.2");
-console.log(green2, blue2);
+// // Exercice 2.2 : La même chose, mais en ignorant ici "Red" et "Yellow"
+// // const green2 = colors[1];
+// // const blue2 = colors[2];
+// const [, green2, blue2, ,] = ["Red", "Green", "Blue", "Yellow"];
+// console.log("Exercice 2.2");
+// console.log(green2, blue2);
 
 // ------ Version objet
 
@@ -153,13 +153,13 @@ hello(person);
  */
 
 // Exercice 3.1 : Décompose le tableau colors pour ne garder dans le reste que les couleurs bleue et jaune
-const restOfColors = [];
-
-restOfColors.push(colors[2]);
-restOfColors.push(colors[3]);
+// const colors = ["Red", "Green", "Blue", "Yellow"];
+const [red, green, ...rest] = ["Red", "Green", "Blue", "Yellow"];
+// restOfColors.push(colors[2]);
+// restOfColors.push(colors[3]);
 
 console.log("Exercice 3.1");
-console.log(restOfColors);
+console.log(rest);
 
 // Exercice 3.2 : Décompose l'objet, de telle sorte à ce que le reste contienne seulement les clés
 // titre, editeur, tome, titre, auteur
